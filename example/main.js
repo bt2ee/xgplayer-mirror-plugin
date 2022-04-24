@@ -1,39 +1,8 @@
 import Player from "xgplayer";
+import { createDom } from 'xgplayer/src/utils/util'
 import "./../.xgplayer/skin/index.js";
+import RotateIcon from './../.xgplayer/skin/assets/rotate.svg'
 
-let pluginName=function(player){
-
-  function mirrorBtnClick () {
-    player.mirror(rotateConfig.clockwise, rotateConfig.innerRotate)
-  }
-
-  // 插件逻辑
-  player.on('mirrorBtnClick', mirrorBtnClick)
-
-  function onDestroy () {
-    player.off('mirrorBtnClick', mirrorBtnClick)
-  }
-
-  player.updateMirrorDeg = function() {
-    if (!player.mirrorDeg) {
-      player.mirrorDeg = 0
-    }
-  }
-
-  player.mirror = function (clockwise = true, innerRotate = true, times = 1) {
-    if (!player.mirrorDeg) {
-      player.mirrorDeg = 0
-    }
-    let factor = clockwise ? 1 : -1
-
-    player.mirrorDeg = (player.mirrorDeg + 1 + factor * 0.25 * times) % 1
-    this.updateMirrorDeg()
-
-    player.emit('rotate', player.mirrorDeg * 360)
-  }
-}
-
-Player.install('pluginName',pluginName);
 
 let player = new Player({
   id: 'mse',
@@ -48,5 +17,26 @@ let player = new Player({
     clockwise: true
   }
 });
+
+let btn = createDom('xg-rotate', `<xg-icon class="xgplayer-icon">${RotateIcon}</xg-icon>`, {}, 'xgplayer-rotate')
+
+let tipsText = '测试一下'
+let tips = createDom('xg-tips', `<span class="xgplayer-tip-rotate">${tipsText}</span>`, {}, 'xgplayer-tips')
+btn.appendChild(tips)
+player.once('ready', () => {
+  player.controls.appendChild(btn)
+});
+
+const onclick = () => {
+  console.log('click', '==== 1234')
+}
+
+['click', 'touchend'].forEach(item => {
+  btn.addEventListener(item, function (e) {
+    e.preventDefault()
+    e.stopPropagation()
+    onclick()
+  })
+})
 
 // player.poster = 'new poster url'
