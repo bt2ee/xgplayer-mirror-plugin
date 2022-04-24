@@ -1,7 +1,7 @@
-import Player from 'xgplayer';
+import Player from "xgplayer";
+import "./../.xgplayer/skin/index.js";
 
 let pluginName=function(player){
-  console.log(player, '==== 1234')
 
   function mirrorBtnClick () {
     player.mirror(rotateConfig.clockwise, rotateConfig.innerRotate)

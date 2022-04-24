@@ -1,5 +1,8 @@
 import { defineConfig } from 'vite';
+import svgLoader from 'vite-svg-loader'
 
 export default defineConfig({
-  // TODO
+  plugins: [svgLoader({
+    defaultImport: 'raw' // or 'raw'
+  })]
 });
