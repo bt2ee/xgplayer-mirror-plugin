@@ -36,16 +36,23 @@ player.once('ready', () => {
   player.controls.appendChild(btn);
 });
 
-const onclick = () => {
-  console.log('click', '==== 1234');
-};
+player.on('onMirrorBtnClick', onMirrorBtnClick)
+
+function onDestroy () {
+  player.off('onMirrorBtnClick', onMirrorBtnClick)
+  player.off('destroy', onDestroy)
+}
+player.once('destroy', onDestroy)
+
+function onMirrorBtnClick() {
+  player.video.style.transform = `rotate(${180}deg)`
+  player.video.style.webKitTransform = `rotate(${180}deg)`
+}
 
 ['click', 'touchend'].forEach((item) => {
   btn.addEventListener(item, function (e) {
     e.preventDefault();
     e.stopPropagation();
-    onclick();
+    onMirrorBtnClick();
   });
 });
-
-// player.poster = 'new poster url'
