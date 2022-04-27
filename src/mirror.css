@@ -1,0 +1,50 @@
+.xgplayer-skin-default .xgplayer-mirror {
+  position: relative;
+  order: 10;
+  display: block;
+  cursor: pointer;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.xgplayer-skin-default .xgplayer-mirror .xgplayer-icon {
+  margin-top: 7px;
+  width: 26px;
+  font-size: 30px;
+  color:#fff;
+}
+
+.xgplayer-skin-default .xgplayer-mirror .xgplayer-icon div {
+  position: absolute;
+}
+
+.xgplayer-skin-default .xgplayer-mirror .xgplayer-icon svg {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  transform: translate(-3px, -3px);
+}
+
+.xgplayer-skin-default .xgplayer-mirror .xgplayer-tips {
+  margin-left: -22px;
+}
+
+.xgplayer-skin-default .xgplayer-mirror .xgplayer-tips .xgplayer-tip-mirror {
+  display: block;
+}
+
+.xgplayer-skin-default .xgplayer-mirror:hover {
+  opacity: 0.85;
+}
+
+.xgplayer-skin-default .xgplayer-mirror:hover .xgplayer-tips {
+  display: block;
+}
+
+.xgplayer-lang-is-en .xgplayer-mirror .xgplayer-tips {
+  margin-left: -26px;
+}
+
+.xgplayer-lang-is-jp .xgplayer-mirror .xgplayer-tips {
+  margin-left: -38px;
+}
