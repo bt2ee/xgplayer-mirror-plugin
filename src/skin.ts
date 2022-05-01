@@ -39,7 +39,7 @@ let s_mirror = function () {
       btn.addEventListener(item, function (e: MouseEvent) {
         e.preventDefault()
         e.stopPropagation()
-        player.mirror(direction)
+        player.userGestureTrigEvent('onMirrorBtnClick', direction)
       })
     })
   })

@@ -1,4 +1,4 @@
-export const MIRROR_DIRECTION = {
+export const MIRROR_DIRECTION: Record<string, number> = {
   NORMAL: 0,
   HORIZONTAL: 1,
   VERTICAL: 2
@@ -7,6 +7,18 @@ export const MIRROR_DIRECTION = {
 function mirror(){
   const player = this
   if (!player.config.mirror) { return }
+
+  function onMirrorBtnClick (direction: string = 'NORMAL') {
+    player.mirror(MIRROR_DIRECTION[direction])
+  }
+
+  player.on('onMirrorBtnClick', onMirrorBtnClick)
+
+  function onDestroy () {
+    player.off('onMirrorBtnClick', onMirrorBtnClick)
+    player.off('destroy', onDestroy)
+  }
+  player.once('destroy', onDestroy)
 
   player.updateDirection = function() {
     if (!player.direction) { player.direction = MIRROR_DIRECTION.NORMAL }
