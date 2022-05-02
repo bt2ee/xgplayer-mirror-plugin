@@ -13,8 +13,8 @@ const MIRROR_ICON: Record<string, SVGAElement> = {
   VERTICAL: MirrorYIcon
 }
 
-let s_mirror = function () {
-  let player = (this as any)
+let s_mirror = function (this: any) {
+  let player = this
   if (!player.config.mirror) { return }
   const mirrorArr = []
   if(player.config.mirror.horizontal) {

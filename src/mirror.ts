@@ -4,7 +4,7 @@ export const MIRROR_DIRECTION: Record<string, number> = {
   VERTICAL: 2
 }
 
-function mirror(){
+function mirror(this: any){
   const player = this
   if (!player.config.mirror) { return }
 
