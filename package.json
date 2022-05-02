@@ -24,6 +24,10 @@
     "example:build": "vite build example/ -c vite.config.js",
     "start": "yarn example:build & yarn example:dev"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bt2ee/xgplayer-mirror-plugin"
+  },
   "devDependencies": {
     "pnpm": "^7.0.0",
     "tsup": "5.12.5",
