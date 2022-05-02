@@ -1,6 +1,6 @@
 {
   "name": "xgplayer-mirror-plugin",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "description": "xgplayer-mirror-plugin",
   "license": "MIT",
   "publishConfig": {
@@ -19,7 +19,6 @@
   "scripts": {
     "build-fast": "tsup src/index.ts --format cjs,esm",
     "build": "pnpm run build-fast -- --dts-resolve",
-    "prepublishOnly": "pnpm run build",
     "example:dev": "vite example/ -c vite.config.js",
     "example:build": "vite build example/ -c vite.config.js",
     "start": "yarn example:build & yarn example:dev"
@@ -29,11 +28,21 @@
     "url": "git+https://github.com/bt2ee/xgplayer-mirror-plugin"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "babel-loader": "^8.2.5",
+    "core-js": "^3.22.3",
+    "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
     "pnpm": "^7.0.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.3.0",
     "tsup": "5.12.5",
     "typescript": "4.6.3",
     "vite": "2.9.5",
-    "vitest": "0.9.3"
+    "vitest": "0.9.3",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
   },
   "dependencies": {
     "vite-svg-loader": "^3.3.0",
