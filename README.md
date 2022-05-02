@@ -15,5 +15,17 @@ npm i -S xgplayer-mirror-plugin
 
 ## Usage
 ```
-import 'xgplayer-mirror-plugin'
+import { mirror, s_mirror } from 'xgplayer-mirror-plugin'
+
+Player.installAll([mirror, s_mirror]);
+
+new Player({
+
+  ...
+
+  mirror: {
+    horizontal: true,
+    vertical: true,
+  },
+});
 ```
