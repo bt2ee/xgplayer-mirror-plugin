@@ -1,5 +1,7 @@
 import Player from 'xgplayer';
-import './../src/index'
+import { mirror, s_mirror } from './../src/index';
+
+Player.installAll([mirror, s_mirror]);
 
 let player = new Player({
   id: 'mse',
@@ -15,6 +17,6 @@ let player = new Player({
   },
   mirror: {
     horizontal: true,
-    vertical: true
-  }
+    vertical: true,
+  },
 });
