@@ -1,14 +1,15 @@
-module.exports = {//注意这里是exports不是export
-  entry: __dirname + "/src/index.ts",//唯一入口文件
-  output: {//输出目录
-      path: __dirname + '/dist',//打包后的js文件存放的地方
-      filename: 'index.js'//打包后输出的js的文件名
+module.exports = {
+  entry: __dirname + "/src/index.ts",
+  output: {
+      path: __dirname + '/dist',
+      filename: 'index.js'
   },
   mode: 'production',
   module: {
     rules: [
       {
         loader: 'babel-loader',
+        exclude: /node-modules/,
         options: {
           presets: [
             [
@@ -19,7 +20,8 @@ module.exports = {//注意这里是exports不是export
                 useBuiltIns: 'usage'
               }
             ]
-          ]
+          ],
+          sourceType: "unambiguous",
         }
       },
       {
@@ -40,4 +42,18 @@ module.exports = {//注意这里是exports不是export
   resolve: {
     extensions: ['.ts', '.js']
   }
+  // //这是需要安装上面webpack-dev-server再进行配置
+  // devServer: {
+  //     port:8087,    //设置端口
+  //     open:true,    //打开浏览器
+  //     hot:true,      //热更新
+  //     static: {
+  //       directory: path.join(__dirname, "example"),
+  //     },
+  //     host:'localhost',    //指定地址
+  // },
+  // plugins: [
+  //   // new CleanWebpackPlugin(['dist']),
+  //   new webpack.HotModuleReplacementPlugin()
+  // ]
 };

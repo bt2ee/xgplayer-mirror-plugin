@@ -1,6 +1,6 @@
 {
   "name": "xgplayer-mirror-plugin",
-  "version": "0.1.6",
+  "version": "0.1.10",
   "description": "xgplayer-mirror-plugin",
   "license": "MIT",
   "publishConfig": {
@@ -10,11 +10,6 @@
     "dist"
   ],
   "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "exports": {
-    "require": "./dist/index.js",
-    "import": "./dist/index.mjs"
-  },
   "types": "./dist/index.d.ts",
   "scripts": {
     "build-fast": "tsup src/index.ts --format cjs,esm",
@@ -42,7 +37,8 @@
     "vite": "2.9.5",
     "vitest": "0.9.3",
     "webpack": "^5.72.0",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1"
   },
   "dependencies": {
     "vite-svg-loader": "^3.3.0",
