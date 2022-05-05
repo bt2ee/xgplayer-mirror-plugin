@@ -1,6 +1,6 @@
 {
   "name": "xgplayer-mirror-plugin",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "xgplayer-mirror-plugin",
   "license": "MIT",
   "publishConfig": {
@@ -12,10 +12,9 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build-fast": "tsup src/index.ts --format cjs,esm",
-    "build": "pnpm run build-fast -- --dts-resolve",
-    "example:dev": "vite example/ -c vite.config.js",
-    "example:build": "vite build example/ -c vite.config.js",
+    "build": "npx webpack build --config ./webpack.config.js",
+    "example:dev": "vite example/ -c ./vite.config.js",
+    "example:build": "vite build example/ -c ./vite.config.js",
     "start": "yarn example:build & yarn example:dev"
   },
   "repository": {
