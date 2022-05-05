@@ -1,5 +1,5 @@
 import Player from 'xgplayer';
-import { mirror, s_mirror } from './../src/index';
+import { mirror, s_mirror } from 'xgplayer-mirror-plugin';
 
 Player.installAll([mirror, s_mirror]);
 

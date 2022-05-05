@@ -3392,6 +3392,14 @@ raw-body@2.5.1:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
+raw-loader@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.npmjs.org/raw-loader/-/raw-loader-4.0.2.tgz#1aac6b7d1ad1501e66efdac1522c73e59a584eb6"
+  integrity sha512-ZnScIV3ag9A4wPX/ZayxL/jZH+euYb6FcUinPcgiQW0+UBtEv0O6Q3lGd3cqJ+GHH+rksEv3Pj99oxJ3u3VIKA==
+  dependencies:
+    loader-utils "^2.0.0"
+    schema-utils "^3.0.0"
+
 readable-stream@^2.0.1:
   version "2.3.7"
   resolved "https://registry.npmjs.org/readable-stream/-/readable-stream-2.3.7.tgz#1eca1cf711aef814c04f62252a36a62f6cb23b57"
@@ -4296,6 +4304,23 @@ ws@^8.4.2:
   version "8.6.0"
   resolved "https://registry.npmjs.org/ws/-/ws-8.6.0.tgz#e5e9f1d9e7ff88083d0c0dd8281ea662a42c9c23"
   integrity sha512-AzmM3aH3gk0aX7/rZLYvjdvZooofDu3fFOzGqcSnQ1tOcTWwhM/o+q++E8mAyVVIyUdajrkzWUGftaVSDLn1bw==
+
+xgplayer-mirror-plugin@^0.1.11:
+  version "0.1.11"
+  resolved "https://registry.npmjs.org/xgplayer-mirror-plugin/-/xgplayer-mirror-plugin-0.1.11.tgz#0af3352157d4995d7858a447d4e4d9e699c4c18d"
+  integrity sha512-JJ9Jy741tCOxHC99Az/ERkOjzesve63koZWVxHSNEUtj/bhrlzqyiK8b+oyjOKKspIpK401lTFoHSbIV8kKitw==
+  dependencies:
+    vite-svg-loader "^3.3.0"
+    xgplayer "^2.31.6"
+
+xgplayer-mirror-plugin@^0.1.12:
+  version "0.1.12"
+  resolved "https://registry.npmjs.org/xgplayer-mirror-plugin/-/xgplayer-mirror-plugin-0.1.12.tgz#5ac3384988647504127094bac28272495d4a1436"
+  integrity sha512-2SKQxAGUoiEjtpCs9rtlmlslV6n7V3ZS/np3u6gZ9yg5T/ARt5cFrWpBudXaBfInDUA76vLlx35o72CSQUZEVg==
+  dependencies:
+    vite-svg-loader "^3.3.0"
+    xgplayer "^2.31.6"
+    xgplayer-mirror-plugin "^0.1.11"
 
 xgplayer-subtitles@^1.0.19:
   version "1.0.22"
