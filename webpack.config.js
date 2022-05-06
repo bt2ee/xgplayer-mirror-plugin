@@ -1,4 +1,5 @@
 const path = require('path')
+const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
   entry: __dirname + "/src/index.ts",
   output: {
@@ -30,5 +31,15 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js']
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
+  externals: {
+    xgplayer: 'xgplayer',
+  },
+  plugins: [
+    new CopyPlugin({
+      patterns: [
+        { from: './src/type.d.ts', to: 'index.d.ts' },
+      ],
+    })
+  ]
 };
