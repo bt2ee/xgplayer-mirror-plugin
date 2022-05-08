@@ -1,6 +1,6 @@
 {
   "name": "xgplayer-mirror-plugin",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "xgplayer-mirror-plugin",
   "license": "MIT",
   "publishConfig": {
@@ -21,6 +21,13 @@
     "type": "git",
     "url": "git+https://github.com/bt2ee/xgplayer-mirror-plugin"
   },
+  "keywords": [
+    "xgplayer",
+    "mp4",
+    "video",
+    "flip",
+    "mirror"
+  ],
   "devDependencies": {
     "@babel/core": "^7.17.10",
     "@babel/preset-env": "^7.17.10",
