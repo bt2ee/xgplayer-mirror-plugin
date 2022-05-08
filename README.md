@@ -14,7 +14,8 @@ npm i -S xgplayer-mirror-plugin
 ```
 
 ## Usage
-```
+```jsx
+import Player from 'xgplayer';
 import { mirror, s_mirror } from 'xgplayer-mirror-plugin'
 
 Player.installAll([mirror, s_mirror]);
